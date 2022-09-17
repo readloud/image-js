@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <script src="imgres.js"></script>
+  </head>
+  <body>
+    <img id="color" src="cat.png" align="center" id="result" width="100%" height="100%" alt="Connection Lost" />
+    <script>
+      async function process() {
+        let image = await IJS.Image.load(document.getElementById('color').src);
+
+        let grey = image.grey();
+
+        document.getElementById('result').src = grey.toDataURL();
+      }
+      process();
+    </script>
+  </body>
+</html>
